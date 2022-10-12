@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <html style="height: 100%;">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>
+                The CIM Voice | MaryTTS
+            </title>
+            <style>
+                body {font-family: Arial; color: white; margin: 0px; height: calc(100% - 20px); background-image: linear-gradient(to right, #4ADE80, #3B82F6); display: flex; flex-direction: column; align-items: center; justify-content: center;}
+                h1, p, h4 {text-align: center; margin-bottom: 10px;}
+                form {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+                textarea, button {border: 5px solid; border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 50%, #a2ff56 100%); border-image-slice: 1; }
+                textarea {font-size: 15px; resize: none; width: 300px; height: 100px; padding: 5px;}
+                button {margin: 10px; font-size: 18px; font-weight: 300; padding: 10px 20px; background-color: rgb(250, 250, 250);}
+                audio {margin-top: 30px; border: 5px solid transparent; border-radius: 0px;}
+            </style>
+        </head>
+        <body>
+            <h1>Cook Islands Māori Voice Synthesis</h1>
+            <strong>This is the first ever synthesised Cook Islands Māori Voice!</strong>
+            <p>Built by Fuki Babasaki and Jenny Wang, using MaryTTS. <br> Simply type in some text into the text box, click generate and hear the voice!</p>
+            <form>
+                <h4>Input your Text:</h4>
+                <textarea id="input_text" placeholder="Haere Mai"></textarea>
+                <button onclick="sendForm()" type="button">Generate Voice</button>
+            </form>
+            <audio id="audio" autoplay="" controls=""></audio>
+		</body>
+        <script>
+            function sendForm() {
+                document.getElementById("audio").src = "https://2b6b-122-59-29-195.au.ngrok.io/process?INPUT_TYPE=TEXT&OUTPUT_TYPE=AUDIO&INPUT_TEXT=" + document.getElementById("input_text").value + "%0A&OUTPUT_TEXT=&effect_Volume_selected=&effect_Volume_parameters=amount%3A2.0%3B&effect_Volume_default=Default&effect_Volume_help=Help&effect_TractScaler_selected=&effect_TractScaler_parameters=amount%3A1.5%3B&effect_TractScaler_default=Default&effect_TractScaler_help=Help&effect_F0Scale_selected=&effect_F0Scale_parameters=f0Scale%3A2.0%3B&effect_F0Scale_default=Default&effect_F0Scale_help=Help&effect_F0Add_selected=&effect_F0Add_parameters=f0Add%3A50.0%3B&effect_F0Add_default=Default&effect_F0Add_help=Help&effect_Rate_selected=&effect_Rate_parameters=durScale%3A1.5%3B&effect_Rate_default=Default&effect_Rate_help=Help&effect_Robot_selected=&effect_Robot_parameters=amount%3A100.0%3B&effect_Robot_default=Default&effect_Robot_help=Help&effect_Whisper_selected=&effect_Whisper_parameters=amount%3A100.0%3B&effect_Whisper_default=Default&effect_Whisper_help=Help&effect_Stadium_selected=&effect_Stadium_parameters=amount%3A100.0&effect_Stadium_default=Default&effect_Stadium_help=Help&effect_Chorus_selected=&effect_Chorus_parameters=delay1%3A466%3Bamp1%3A0.54%3Bdelay2%3A600%3Bamp2%3A-0.10%3Bdelay3%3A250%3Bamp3%3A0.30&effect_Chorus_default=Default&effect_Chorus_help=Help&effect_FIRFilter_selected=&effect_FIRFilter_parameters=type%3A3%3Bfc1%3A500.0%3Bfc2%3A2000.0&effect_FIRFilter_default=Default&effect_FIRFilter_help=Help&effect_JetPilot_selected=&effect_JetPilot_parameters=&effect_JetPilot_default=Default&effect_JetPilot_help=Help&HELP_TEXT=&exampleTexts=&VOICE_SELECTIONS=cim_voice-hsmm%20cm%20female%20hmm&AUDIO_OUT=WAVE_FILE&LOCALE=cm&VOICE=cim_voice-hsmm&AUDIO=WAVE_FILE";
+            }
+        </script>
+	</html>
